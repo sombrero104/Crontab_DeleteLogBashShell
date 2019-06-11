@@ -25,7 +25,7 @@ function deleteFiles() {
 	# if [ -f $1 ]
 	# then
 		# ---------- get target file size
-		arr=( $(ls -tr $1 | awk '{ print $NF }') )
+		arr=( $(2>/dev/null ls -tr $1 | awk '{ print $NF }') )
 		arr_size="${#arr[@]}"
 		if [ $arr_size -gt 0 ]
 		then
